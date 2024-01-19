@@ -7,6 +7,14 @@
     <h1 class="display-4">@ViewData["Title"]</h1>
     @foreach (var file in files!)
     {
-        <p>@file</p>
+        <p>
+            <a 
+                asp-controller="File" 
+                asp-action="Contents"
+                asp-route-id="@file.Split(['/', '\\']).Last()"
+            >
+                @file
+            </a>
+        </p>
     }
 </div>

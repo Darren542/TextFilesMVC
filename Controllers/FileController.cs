@@ -25,4 +25,12 @@ public class FileController : Controller
         return View();
     }
 
+    public IActionResult Contents(string id)
+    {
+        var path = Path.Combine(_env.ContentRootPath, "TextFiles", id);
+        var contents = System.IO.File.ReadAllText(path);
+        ViewBag.Contents = contents;
+        return View();
+    }
+
 }
