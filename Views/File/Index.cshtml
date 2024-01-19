@@ -13,7 +13,7 @@
                 asp-action="Contents"
                 asp-route-id="@file.Split(['/', '\\']).Last()"
             >
-                @file
+                @file.Split(['/', '\\']).Last()
             </a>
         </p>
     }
